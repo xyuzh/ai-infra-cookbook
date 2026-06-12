@@ -25,8 +25,8 @@ anyscale login
 Clone the example from GitHub.
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/spark_on_ray
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/spark_on_ray
 \`\`\`
 
 Submit the job.

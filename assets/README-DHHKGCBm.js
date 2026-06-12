@@ -29,8 +29,8 @@ anyscale login
 Clone the example from GitHub.
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/image_processing
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/image_processing
 \`\`\`
 
 Submit the job. Use \`--env\` to forward your Hugging Face token to authenticate with Hugging Face.

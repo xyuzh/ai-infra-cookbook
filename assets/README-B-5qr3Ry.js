@@ -1,4 +1,4 @@
-const e=`# Distributed VLA Fine-Tuning with Ray
+const t=`# Distributed VLA Fine-Tuning with Ray
 
 This example fine-tunes the [PI0.5](https://www.physicalintelligence.company/blog/pi05) Vision-Language-Action (VLA) model on a [LeRobot](https://github.com/huggingface/lerobot) robotics dataset stored in S3, using [Ray Data](https://docs.ray.io/en/latest/data/data.html) for distributed preprocessing and [Ray Train](https://docs.ray.io/en/latest/train/train.html) for distributed GPU training on [Anyscale](https://anyscale.com).
 
@@ -22,8 +22,8 @@ anyscale login
 ## Clone the example
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/vla_fine_tuning
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/vla_fine_tuning
 \`\`\`
 
 ## Accept the PaliGemma license
@@ -45,7 +45,7 @@ The job runs 2 training epochs on the \`xvla-soft-fold\` dataset across 8× L40S
 
 ## Interactive notebook
 
-For a step-by-step walkthrough, open **[vla.ipynb](https://github.com/anyscale/examples/blob/main/vla_fine_tuning/vla.ipynb)** in an Anyscale workspace and run cells top-to-bottom.
+For a step-by-step walkthrough, open **[vla.ipynb](https://github.com/anyscale/ai-infra-cookbook/blob/main/vla_fine_tuning/vla.ipynb)** in an Anyscale workspace and run cells top-to-bottom.
 
 ## Understanding the example
 
@@ -68,9 +68,9 @@ Ray separates the two distinct compute workloads in VLA training:
                      +--------------------+---------------------
 \`\`\`
 
-- **[lerobot_datasource.py](https://github.com/anyscale/examples/blob/main/vla_fine_tuning/lerobot_datasource.py)** is a custom Ray Data datasource that streams LeRobot v3 datasets (parquet metadata + AV1-encoded mp4 video) directly from S3, decoding video frames on CPU workers.
-- **[vla.py](https://github.com/anyscale/examples/blob/main/vla_fine_tuning/vla.py)** builds the Ray Data preprocessing pipeline (camera renaming, HWC→CHW transposition, /255 normalisation) and launches distributed training with \`TorchTrainer\`.
-- **[util.py](https://github.com/anyscale/examples/blob/main/vla_fine_tuning/util.py)** contains model loading, checkpointing, collation, and training step helpers. PI0.5 is loaded in BF16 with only the four action/time projection heads unfrozen — the 3B-parameter PaliGemma backbone stays frozen, dramatically reducing memory and compute.
+- **[lerobot_datasource.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/vla_fine_tuning/lerobot_datasource.py)** is a custom Ray Data datasource that streams LeRobot v3 datasets (parquet metadata + AV1-encoded mp4 video) directly from S3, decoding video frames on CPU workers.
+- **[vla.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/vla_fine_tuning/vla.py)** builds the Ray Data preprocessing pipeline (camera renaming, HWC→CHW transposition, /255 normalisation) and launches distributed training with \`TorchTrainer\`.
+- **[util.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/vla_fine_tuning/util.py)** contains model loading, checkpointing, collation, and training step helpers. PI0.5 is loaded in BF16 with only the four action/time projection heads unfrozen — the 3B-parameter PaliGemma backbone stays frozen, dramatically reducing memory and compute.
 - The LR schedule uses linear warmup (10%) followed by cosine decay, computed from the actual number of training rows so the schedule is correct whether you use a row limit (\`LIMIT_ROWS\`) or train on the full dataset.
 - Fault tolerance is built in: if a worker dies, Ray restarts from the last checkpoint automatically.
 - PI0.5 requires approximately 28 GB of VRAM. The default configuration targets **L40S** GPUs (48 GB).
@@ -85,4 +85,4 @@ Ray separates the two distinct compute workloads in VLA training:
 
 Part of the [Open-Source Frontier Infra Stack](../README.md) — explore the
 map in the [interactive explorer](../README.md#interactive-explorer).
-`;export{e as default};
+`;export{t as default};

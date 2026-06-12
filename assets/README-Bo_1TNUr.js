@@ -25,8 +25,8 @@ Clone the repository and submit the job using the provided YAML configuration:
 
 \`\`\`bash
 # Clone the repository
-git clone https://github.com/anyscale/examples.git
-cd examples/megatron_training
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/megatron_training
 
 # Submit the job
 anyscale job submit -f job.yaml --env HF_TOKEN=$HF_TOKEN
@@ -36,9 +36,9 @@ anyscale job submit -f job.yaml --env HF_TOKEN=$HF_TOKEN
 
 ## Understanding the example
 
-- **Builds** a Docker image with Megatron-Bridge and dependencies (using [Dockerfile](https://github.com/anyscale/examples/blob/main/megatron_training/Dockerfile)).
+- **Builds** a Docker image with Megatron-Bridge and dependencies (using [Dockerfile](https://github.com/anyscale/ai-infra-cookbook/blob/main/megatron_training/Dockerfile)).
 - **Provisions** 8 GPUs (Tested working with 1 node with 8xH100 and 2 nodes with 4xL4 GPUs).
-- **Runs** the distributed training script [llm_sft_ray_train_megatron.py](https://github.com/anyscale/examples/blob/main/megatron_training/llm_sft_ray_train_megatron.py), which wires 8 Ray Train workers into Megatron-Bridge SFT with tensor, pipeline, and data parallelism.
+- **Runs** the distributed training script [llm_sft_ray_train_megatron.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/megatron_training/llm_sft_ray_train_megatron.py), which wires 8 Ray Train workers into Megatron-Bridge SFT with tensor, pipeline, and data parallelism.
 
 ## Position in the stack
 

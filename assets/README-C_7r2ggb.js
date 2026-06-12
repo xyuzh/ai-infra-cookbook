@@ -32,8 +32,8 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 Clone the example from GitHub.
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/wide_ep_fault_tolerance
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/wide_ep_fault_tolerance
 \`\`\`
 
 Deploy the service. By default it uses \`microsoft/Phi-tiny-MoE-instruct\` with autoscaling enabled (\`num_replicas: auto\`).

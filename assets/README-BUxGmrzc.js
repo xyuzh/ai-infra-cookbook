@@ -25,11 +25,11 @@ anyscale login
 Clone the example from GitHub.
 
 \`\`\` bash
-git clone https://github.com/anyscale/examples.git
-cd examples/service_hello_world
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/service_hello_world
 \`\`\`
 
-The code for an endpoint that says "hello" is in [main.py](https://github.com/anyscale/examples/blob/main/service_hello_world/main.py).
+The code for an endpoint that says "hello" is in [main.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/service_hello_world/main.py).
 
 Also take a look at \`service.yaml\`. This file specifies the container image, compute resources, script entrypoint, and a few other fields.
 

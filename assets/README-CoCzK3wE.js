@@ -22,8 +22,8 @@ anyscale login
 Clone the example from GitHub.
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/jax_training
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/jax_training
 \`\`\`
 
 Submit the job with
@@ -34,7 +34,7 @@ anyscale job submit -f job.yaml
 
 ## Understanding the example
 
-- This example installs a nightly version of Ray in the [Dockerfile](https://github.com/anyscale/examples/blob/main/jax_training/Dockerfile) because Ray Train GPU support for Jax is very recent.
+- This example installs a nightly version of Ray in the [Dockerfile](https://github.com/anyscale/ai-infra-cookbook/blob/main/jax_training/Dockerfile) because Ray Train GPU support for Jax is very recent.
 
 ## Position in the stack
 

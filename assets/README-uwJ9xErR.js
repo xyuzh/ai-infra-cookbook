@@ -57,8 +57,8 @@ anyscale login
 ## Clone the example
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/video_curation
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/video_curation
 \`\`\`
 ## Submit the job
 

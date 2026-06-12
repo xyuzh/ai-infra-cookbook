@@ -21,8 +21,8 @@ anyscale login
 ## Clone the example
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/sglang_inference
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/sglang_inference
 \`\`\`
 
 ## Batch inference
@@ -67,12 +67,12 @@ python query.py
 
 ## Understanding the example
 
-- [serve.py](https://github.com/anyscale/examples/blob/main/sglang_inference/serve.py) uses Ray Serve's [\`placement_group_bundles\`](https://docs.ray.io/en/latest/serve/advanced-guides/replica-scheduling.html) to reserve GPUs across multiple nodes for tensor-parallel inference.
-- [driver_offline.py](https://github.com/anyscale/examples/blob/main/sglang_inference/driver_offline.py) wraps SGLang in a Ray actor for batch inference.
+- [serve.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/sglang_inference/serve.py) uses Ray Serve's [\`placement_group_bundles\`](https://docs.ray.io/en/latest/serve/advanced-guides/replica-scheduling.html) to reserve GPUs across multiple nodes for tensor-parallel inference.
+- [driver_offline.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/sglang_inference/driver_offline.py) wraps SGLang in a Ray actor for batch inference.
 - SGLang is imported inside the actor because it initializes CUDA and cannot be imported on CPU-only nodes.
 - The default configuration uses TP=4, PP=2 across 2 nodes (8 GPUs per replica) on A10G GPUs. Other GPU types like L4, L40S, A100, and H100 would also work.
 - The service autoscales from 1-4 replicas based on queue depth. See [AutoscalingConfig](https://docs.ray.io/en/latest/serve/api/doc/ray.serve.config.AutoscalingConfig.html) for tuning.
-- The [Dockerfile](https://github.com/anyscale/examples/blob/main/sglang_inference/Dockerfile) installs CUDA toolkit and SGLang dependencies on top of the Ray base image.
+- The [Dockerfile](https://github.com/anyscale/ai-infra-cookbook/blob/main/sglang_inference/Dockerfile) installs CUDA toolkit and SGLang dependencies on top of the Ray base image.
 
 **Environment variables:**
 

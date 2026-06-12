@@ -23,8 +23,8 @@ anyscale login
 Clone the example from GitHub.
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/video_generation_with_fastvideo
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/video_generation_with_fastvideo
 \`\`\`
 
 Deploy the service.

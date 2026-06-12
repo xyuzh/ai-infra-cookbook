@@ -28,8 +28,8 @@ anyscale login
 Clone the example from GitHub.
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/fineweb_dedup
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/fineweb_dedup
 \`\`\`
 
 Submit the job. Use \`--env\` to forward your Hugging Face token to authenticate with Hugging Face.

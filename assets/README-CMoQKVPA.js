@@ -23,8 +23,8 @@ anyscale login
 Clone the example from GitHub.
 
 \`\`\`bash
-git clone https://github.com/anyscale/examples.git
-cd examples/serve_tensor_parallel
+git clone https://github.com/anyscale/ai-infra-cookbook.git
+cd ai-infra-cookbook/serve_tensor_parallel
 \`\`\`
 
 Deploy the service.
@@ -46,7 +46,7 @@ The \`anyscale service deploy\` command outputs a line that looks like
 curl -H "Authorization: Bearer <SERVICE_TOKEN>" <BASE_URL>
 \`\`\`
 
-From the output, you can extract the service token and base URL. Open [query.py](https://github.com/anyscale/examples/blob/main/serve_tensor_parallel/query.py) and add them to the appropriate fields.
+From the output, you can extract the service token and base URL. Open [query.py](https://github.com/anyscale/ai-infra-cookbook/blob/main/serve_tensor_parallel/query.py) and add them to the appropriate fields.
 \`\`\`python
 token = <SERVICE_TOKEN> 
 base_url = <BASE_URL> 
